@@ -99,21 +99,22 @@ export default function HomePage() {
               </div>
             }
           >
-            <div className="grid grid-cols-2 gap-2">
-              {/* 1枚目: 全幅 feed */}
-              <div className="col-span-2">
-                <ClinicCard clinic={popularClinics[0]} variant="feed" />
+            {/* モバイル: feed全幅 + grid×2 の交互。PC: 3列均等グリッド */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+              {/* 1枚目: モバイル全幅 / PC 1列目 */}
+              <div className="col-span-2 md:col-span-1">
+                <ClinicCard clinic={popularClinics[0]} variant="feed" className="h-full" />
               </div>
-              {/* 2〜3枚目: grid × 2 */}
+              {/* 2〜3枚目 */}
               {popularClinics[1] && <ClinicCard clinic={popularClinics[1]} variant="grid" />}
               {popularClinics[2] && <ClinicCard clinic={popularClinics[2]} variant="grid" />}
-              {/* 4枚目: 全幅 feed */}
+              {/* 4枚目: モバイル全幅 / PC 1列目 */}
               {popularClinics[3] && (
-                <div className="col-span-2">
-                  <ClinicCard clinic={popularClinics[3]} variant="feed" />
+                <div className="col-span-2 md:col-span-1">
+                  <ClinicCard clinic={popularClinics[3]} variant="feed" className="h-full" />
                 </div>
               )}
-              {/* 5〜6枚目: grid × 2 */}
+              {/* 5〜6枚目 */}
               {popularClinics[4] && <ClinicCard clinic={popularClinics[4]} variant="grid" />}
               {popularClinics[5] && <ClinicCard clinic={popularClinics[5]} variant="grid" />}
             </div>
@@ -135,7 +136,7 @@ export default function HomePage() {
               <Link
                 key={post.id}
                 href={`/clinics/${post.clinicSlug}`}
-                className="shrink-0 relative w-40 h-40 rounded-2xl overflow-hidden group shadow-sm"
+                className="shrink-0 relative w-40 h-40 md:w-52 md:h-52 rounded-2xl overflow-hidden group shadow-sm"
               >
                 <Image
                   src={post.mediaUrl}

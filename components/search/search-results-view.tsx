@@ -52,8 +52,8 @@ export function SearchResultsView({ clinics }: SearchResultsViewProps) {
           <p className="text-text-muted text-sm">フィルター条件を変更してお試しください</p>
         </div>
       ) : viewMode === "feed" ? (
-        <Suspense fallback={<div className="space-y-3">{Array.from({length:3}).map((_,i) => <div key={i} className="rounded-2xl bg-ha-bg-subtle animate-pulse h-72"/>)}</div>}>
-          <div className="space-y-3">
+        <Suspense fallback={<div className="grid grid-cols-1 md:grid-cols-2 gap-4">{Array.from({length:4}).map((_,i) => <div key={i} className="rounded-2xl bg-ha-bg-subtle animate-pulse h-72"/>)}</div>}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {clinics.map((clinic) => (
               <ClinicCard key={clinic.id} clinic={clinic} variant="feed" />
             ))}

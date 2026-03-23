@@ -31,13 +31,13 @@ export function ClinicCard({ clinic, className, variant = "grid" }: ClinicCardPr
           className
         )}
       >
-        {/* メイン写真（4:3） */}
-        <div className="relative aspect-[4/3] w-full overflow-hidden">
+        {/* メイン写真（モバイル4:3 / PC3:2） */}
+        <div className="relative aspect-[4/3] md:aspect-[3/2] w-full overflow-hidden">
           <Image
             src={mainImg}
             alt={`${clinic.name}の写真`}
             fill
-            sizes="(max-width: 768px) 100vw, 60vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-105"
           />
           {/* 評価バッジ（右上） */}
@@ -93,8 +93,8 @@ export function ClinicCard({ clinic, className, variant = "grid" }: ClinicCardPr
         className
       )}
     >
-      {/* 写真（全幅、h-56） */}
-      <div className="relative h-56 overflow-hidden">
+      {/* 写真（モバイルh-56 / PCはグリッド幅に応じて拡大） */}
+      <div className="relative h-56 md:h-64 overflow-hidden">
         <Image
           src={mainImg}
           alt={`${clinic.name}の写真`}
