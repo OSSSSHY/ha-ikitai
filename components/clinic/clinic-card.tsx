@@ -16,9 +16,11 @@ interface ClinicCardProps {
    * "feed" — 全幅フィード用。aspect-[4/3] + 最小限フッター
    */
   variant?: "grid" | "feed";
+  /** PRバッジを表示する広告枠カード */
+  sponsored?: boolean;
 }
 
-export function ClinicCard({ clinic, className, variant = "grid" }: ClinicCardProps) {
+export function ClinicCard({ clinic, className, variant = "grid", sponsored = false }: ClinicCardProps) {
   const status = getOpenStatus(clinic);
   const mainImg = clinic.instagramPosts[0]?.mediaUrl ?? clinic.heroImageUrl;
 
@@ -40,20 +42,28 @@ export function ClinicCard({ clinic, className, variant = "grid" }: ClinicCardPr
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-105"
           />
+          {/* PRバッジ（左上） */}
+          {sponsored && (
+            <div className="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider z-10">
+              PR
+            </div>
+          )}
           {/* 評価バッジ（右上） */}
           <div className="absolute top-3 right-3 flex items-center gap-1 bg-black/50 backdrop-blur-sm text-white text-xs font-number font-semibold px-2 py-1 rounded-full">
             <Star size={11} className="fill-accent text-accent" />
             {clinic.reviewAverage.toFixed(1)}
           </div>
-          {/* 営業ステータス（左上） */}
-          <div className={cn(
-            "absolute top-3 left-3 text-xs font-medium px-2 py-1 rounded-full backdrop-blur-sm",
-            status === "open"
-              ? "bg-status-open/90 text-white"
-              : "bg-black/50 text-white/70"
-          )}>
-            {status === "open" ? "● 営業中" : "● 休診"}
-          </div>
+          {/* 営業ステータス（左上、PR時は非表示） */}
+          {!sponsored && (
+            <div className={cn(
+              "absolute top-3 left-3 text-xs font-medium px-2 py-1 rounded-full backdrop-blur-sm",
+              status === "open"
+                ? "bg-status-open/90 text-white"
+                : "bg-black/50 text-white/70"
+            )}>
+              {status === "open" ? "● 営業中" : "● 休診"}
+            </div>
+          )}
           {/* キニナル！（右下） */}
           <div className="absolute bottom-3 right-3">
             <KininarouButton count={clinic.kininarouCount} compact />
@@ -106,6 +116,12 @@ export function ClinicCard({ clinic, className, variant = "grid" }: ClinicCardPr
         {/* 下部グラデーションオーバーレイ */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
+        {/* PRバッジ（左上） */}
+        {sponsored && (
+          <div className="absolute top-2 left-2 bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider z-10">
+            PR
+          </div>
+        )}
         {/* 評価（右上） */}
         <div className="absolute top-2 right-2 flex items-center gap-0.5 bg-black/50 backdrop-blur-sm text-white text-xs font-number font-semibold px-1.5 py-0.5 rounded-full">
           <Star size={10} className="fill-accent text-accent" />

@@ -75,14 +75,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ===== 広告枠 ===== */}
-        <section className="max-w-5xl mx-auto px-4 pt-8 pb-2">
-          <div className="relative flex items-center justify-center bg-ha-bg-subtle border border-ha-border rounded-2xl h-24 md:h-32 overflow-hidden">
-            <span className="absolute top-2 left-3 text-[10px] font-medium text-text-muted tracking-widest">PR</span>
-            <p className="text-text-muted text-sm">広告スペース</p>
-          </div>
-        </section>
-
         {/* ===== 人気の歯医者さん（交互グリッド） ===== */}
         <section className="max-w-5xl mx-auto px-4 py-10">
           <div className="flex items-center justify-between mb-5">
@@ -97,7 +89,6 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* 交互グリッド: feed(全幅) + grid×2 を繰り返し */}
           <Suspense
             fallback={
               <div className="space-y-2">
@@ -107,8 +98,11 @@ export default function HomePage() {
               </div>
             }
           >
-            {/* モバイル: feed全幅 + grid×2 の交互。PC: 3列均等グリッド */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+              {/* PRカード（全幅固定・最上部） */}
+              <div className="col-span-2 md:col-span-3">
+                <ClinicCard clinic={popularClinics[0]} variant="feed" sponsored />
+              </div>
               {/* 1枚目: モバイル全幅 / PC 1列目 */}
               <div className="col-span-2 md:col-span-1">
                 <ClinicCard clinic={popularClinics[0]} variant="feed" className="h-full" />
