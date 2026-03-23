@@ -75,6 +75,14 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ===== 広告枠 ===== */}
+        <section className="max-w-5xl mx-auto px-4 pt-8 pb-2">
+          <div className="relative flex items-center justify-center bg-ha-bg-subtle border border-ha-border rounded-2xl h-24 md:h-32 overflow-hidden">
+            <span className="absolute top-2 left-3 text-[10px] font-medium text-text-muted tracking-widest">PR</span>
+            <p className="text-text-muted text-sm">広告スペース</p>
+          </div>
+        </section>
+
         {/* ===== 人気の歯医者さん（交互グリッド） ===== */}
         <section className="max-w-5xl mx-auto px-4 py-10">
           <div className="flex items-center justify-between mb-5">
