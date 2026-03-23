@@ -14,14 +14,14 @@ export function ClinicStatusBadge({ clinic, className }: ClinicStatusBadgeProps)
   return (
     <span
       className={cn(
-        "text-xs font-medium px-2 py-0.5 rounded-full",
+        "text-xs font-medium px-2 py-0.5 rounded-md",
         status === "open"
-          ? "bg-green-50 text-status-open"
-          : "bg-red-50 text-status-closed",
+          ? "bg-status-open/10 text-status-open"
+          : "bg-status-closed/10 text-status-closed",
         className
       )}
     >
-      {status === "open" ? "● 営業中" : "● 休診"}
+      {status === "open" ? "営業中" : "休診"}
     </span>
   );
 }

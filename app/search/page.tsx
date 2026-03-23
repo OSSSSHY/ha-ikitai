@@ -40,16 +40,16 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
     <>
       <Header />
 
-      <main className="max-w-5xl mx-auto px-4 pb-24 md:pb-6">
-        {/* 検索バー（上部固定） */}
-        <div className="sticky top-14 z-30 bg-white/95 backdrop-blur-sm py-3 -mx-4 px-4 border-b border-ha-border">
+      <main className="max-w-6xl mx-auto px-4 pb-24 md:pb-6">
+        {/* 検索バー */}
+        <div className="sticky top-12 z-30 bg-white/95 backdrop-blur-md py-3 -mx-4 px-4 border-b border-ha-border">
           <Suspense>
             <SearchBar compact />
           </Suspense>
         </div>
 
-        {/* フィルターバー（スクロール時に追従） */}
-        <div className="sticky top-[calc(3.5rem+56px)] z-20 bg-white/95 backdrop-blur-sm py-2 -mx-4 px-4 border-b border-ha-border">
+        {/* フィルターバー */}
+        <div className="sticky top-[calc(3rem+52px)] z-20 bg-white/95 backdrop-blur-md py-2 -mx-4 px-4 border-b border-ha-border">
           <Suspense>
             <FilterPanel />
           </Suspense>
@@ -59,9 +59,9 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
         <div className="pt-4">
           <Suspense
             fallback={
-              <div className="space-y-3">
-                {Array.from({ length: 4 }).map((_, i) => (
-                  <div key={i} className="rounded-2xl bg-ha-bg-subtle animate-pulse h-72" />
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} className="rounded-lg bg-ha-bg-subtle animate-pulse h-56" />
                 ))}
               </div>
             }

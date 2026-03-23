@@ -25,6 +25,8 @@ export default {
         },
         "ha-bg": "var(--color-bg)",
         "ha-bg-subtle": "var(--color-bg-subtle)",
+        "ha-bg-dark": "var(--color-bg-dark)",
+        "ha-bg-dark-subtle": "var(--color-bg-dark-subtle)",
         "ha-text": "var(--color-text)",
         "text-muted": "var(--color-text-muted)",
         "ha-border": "var(--color-border)",
@@ -58,9 +60,9 @@ export default {
         ring: "hsl(var(--ring))",
       },
       fontFamily: {
-        heading: ['"Zen Maru Gothic"', "sans-serif"],
+        heading: ['"Noto Sans JP"', "sans-serif"],
         body: ['"Noto Sans JP"', "sans-serif"],
-        number: ['"Plus Jakarta Sans"', "sans-serif"],
+        number: ['"Noto Sans JP"', "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

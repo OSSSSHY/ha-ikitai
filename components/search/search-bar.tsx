@@ -2,7 +2,6 @@
 
 import { useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Search, MapPin, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SearchBarProps {
@@ -33,11 +32,10 @@ export function SearchBar({ compact = false, className }: SearchBarProps) {
       <form
         onSubmit={handleSubmit}
         className={cn(
-          "flex items-center gap-2 bg-white border border-ha-border rounded-full px-4 py-2 shadow-sm",
+          "flex items-center gap-2 bg-white border border-ha-border rounded-md px-3 py-2",
           className
         )}
       >
-        <MapPin size={14} className="text-primary shrink-0" />
         <select
           value={prefecture}
           onChange={(e) => setPrefecture(e.target.value)}
@@ -48,7 +46,6 @@ export function SearchBar({ compact = false, className }: SearchBarProps) {
             <option key={p} value={p}>{p}</option>
           ))}
         </select>
-        <Search size={14} className="text-text-muted shrink-0" />
         <input
           type="text"
           value={query}
@@ -59,7 +56,7 @@ export function SearchBar({ compact = false, className }: SearchBarProps) {
         <button
           type="submit"
           disabled={isPending}
-          className="bg-primary text-white text-xs font-medium px-3 py-1.5 rounded-full hover:bg-primary-dark transition-colors shrink-0"
+          className="bg-ha-text text-white text-xs font-medium px-3 py-1.5 rounded-md hover:bg-ha-text/85 transition-colors shrink-0"
         >
           検索
         </button>
@@ -67,17 +64,16 @@ export function SearchBar({ compact = false, className }: SearchBarProps) {
     );
   }
 
-  // ヒーロー用 大きめバージョン
+  // ヒーロー用
   return (
     <form
       onSubmit={handleSubmit}
       className={cn(
-        "bg-white rounded-2xl shadow-xl p-2 flex flex-col sm:flex-row gap-2",
+        "bg-white rounded-lg p-1.5 flex flex-col sm:flex-row gap-1.5",
         className
       )}
     >
-      <div className="flex items-center gap-2 flex-1 px-3 py-2 border border-ha-border rounded-xl">
-        <MapPin size={16} className="text-primary shrink-0" />
+      <div className="flex items-center flex-1 px-3 py-2 border border-ha-border rounded-md">
         <select
           value={prefecture}
           onChange={(e) => setPrefecture(e.target.value)}
@@ -90,8 +86,7 @@ export function SearchBar({ compact = false, className }: SearchBarProps) {
         </select>
       </div>
 
-      <div className="flex items-center gap-2 flex-[2] px-3 py-2 border border-ha-border rounded-xl">
-        <Search size={16} className="text-text-muted shrink-0" />
+      <div className="flex items-center flex-[2] px-3 py-2 border border-ha-border rounded-md">
         <input
           type="text"
           value={query}
@@ -104,10 +99,9 @@ export function SearchBar({ compact = false, className }: SearchBarProps) {
       <button
         type="submit"
         disabled={isPending}
-        className="bg-primary text-white font-medium px-6 py-3 rounded-xl hover:bg-primary-dark transition-colors flex items-center justify-center gap-2"
+        className="bg-ha-text text-white font-medium px-6 py-2.5 rounded-md hover:bg-ha-text/85 transition-colors"
       >
-        <Search size={16} />
-        <span>検索</span>
+        検索
       </button>
     </form>
   );

@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ExternalLink, X, ChevronLeft, ChevronRight, Instagram } from "lucide-react";
 import type { InstagramPost } from "@/src/types/clinic";
-import { cn } from "@/lib/utils";
 
 interface InstagramGalleryProps {
   posts: InstagramPost[];
@@ -24,17 +22,15 @@ export function InstagramGallery({
 
   if (!instagramConnected || posts.length === 0) {
     return (
-      <div className="rounded-2xl border-2 border-dashed border-ha-border bg-ha-bg-subtle p-8 text-center">
-        <Instagram size={36} className="text-text-muted mx-auto mb-3" />
+      <div className="rounded-lg border-2 border-dashed border-ha-border bg-ha-bg-subtle p-8 text-center">
         <p className="text-sm text-text-muted">Instagram投稿がここに表示されます</p>
         {instagramAccount && (
           <a
             href={`https://instagram.com/${instagramAccount.replace("@", "")}`}
             target="_blank"
             rel="noreferrer"
-            className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
+            className="mt-3 inline-block text-sm text-primary hover:underline"
           >
-            <ExternalLink size={13} />
             {instagramAccount} をInstagramで見る
           </a>
         )}
@@ -67,7 +63,7 @@ export function InstagramGallery({
       {posts.length > 9 && (
         <button
           onClick={() => setShowAll(!showAll)}
-          className="mt-3 w-full text-sm text-primary hover:underline"
+          className="mt-3 w-full text-sm text-text-muted hover:text-ha-text transition-colors"
         >
           {showAll ? "折りたたむ" : `さらに ${posts.length - 9} 件を表示`}
         </button>
@@ -79,9 +75,8 @@ export function InstagramGallery({
           href={`https://instagram.com/${instagramAccount.replace("@", "")}`}
           target="_blank"
           rel="noreferrer"
-          className="mt-3 inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-primary transition-colors"
+          className="mt-3 inline-block text-sm text-text-muted hover:text-primary transition-colors"
         >
-          <ExternalLink size={13} />
           Instagramで見る
         </a>
       )}
@@ -93,21 +88,21 @@ export function InstagramGallery({
           onClick={() => setLightboxIndex(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white"
+            className="absolute top-4 right-4 text-white/70 hover:text-white text-sm font-medium"
             onClick={() => setLightboxIndex(null)}
           >
-            <X size={28} />
+            閉じる
           </button>
 
           {lightboxIndex > 0 && (
             <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-2xl font-light"
               onClick={(e) => {
                 e.stopPropagation();
                 setLightboxIndex((i) => (i ?? 1) - 1);
               }}
             >
-              <ChevronLeft size={36} />
+              ‹
             </button>
           )}
 
@@ -125,18 +120,18 @@ export function InstagramGallery({
 
           {lightboxIndex < displayed.length - 1 && (
             <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-2xl font-light"
               onClick={(e) => {
                 e.stopPropagation();
                 setLightboxIndex((i) => (i ?? 0) + 1);
               }}
             >
-              <ChevronRight size={36} />
+              ›
             </button>
           )}
 
           {displayed[lightboxIndex]?.caption && (
-            <p className="absolute bottom-4 left-0 right-0 text-center text-white text-sm px-8">
+            <p className="absolute bottom-4 left-0 right-0 text-center text-white/80 text-sm px-8">
               {displayed[lightboxIndex].caption}
             </p>
           )}

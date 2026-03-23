@@ -2,155 +2,86 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Star, Clock, ChevronRight } from "lucide-react";
 import type { Clinic } from "@/src/types/clinic";
 import { getOpenStatus } from "@/src/lib/clinics";
-import { KininarouButton } from "./kininarou-button";
 import { cn } from "@/lib/utils";
 
 interface ClinicCardProps {
   clinic: Clinic;
   className?: string;
-  /**
-   * "grid" — 2列グリッド用。写真大きめ + オーバーレイテキスト（デフォルト）
-   * "feed" — 全幅フィード用。aspect-[4/3] + 最小限フッター
-   */
-  variant?: "grid" | "feed";
-  /** PRバッジを表示する広告枠カード */
   sponsored?: boolean;
 }
 
-export function ClinicCard({ clinic, className, variant = "grid", sponsored = false }: ClinicCardProps) {
+export function ClinicCard({ clinic, className, sponsored = false }: ClinicCardProps) {
   const status = getOpenStatus(clinic);
-  const mainImg = clinic.instagramPosts[0]?.mediaUrl ?? clinic.heroImageUrl;
 
-  if (variant === "feed") {
-    return (
-      <Link
-        href={`/clinics/${clinic.slug}`}
-        className={cn(
-          "block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in-up",
-          className
-        )}
-      >
-        {/* メイン写真（モバイル4:3 / PC3:2） */}
-        <div className="relative aspect-[4/3] md:aspect-[3/2] w-full overflow-hidden">
-          <Image
-            src={mainImg}
-            alt={`${clinic.name}の写真`}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-500 hover:scale-105"
-          />
-          {/* PRバッジ（左上） */}
-          {sponsored && (
-            <div className="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider z-10">
-              PR
-            </div>
-          )}
-          {/* 評価バッジ（右上） */}
-          <div className="absolute top-3 right-3 flex items-center gap-1 bg-black/50 backdrop-blur-sm text-white text-xs font-number font-semibold px-2 py-1 rounded-full">
-            <Star size={11} className="fill-accent text-accent" />
-            {clinic.reviewAverage.toFixed(1)}
-          </div>
-          {/* 営業ステータス（左上、PR時は非表示） */}
-          {!sponsored && (
-            <div className={cn(
-              "absolute top-3 left-3 text-xs font-medium px-2 py-1 rounded-full backdrop-blur-sm",
-              status === "open"
-                ? "bg-status-open/90 text-white"
-                : "bg-black/50 text-white/70"
-            )}>
-              {status === "open" ? "● 営業中" : "● 休診"}
-            </div>
-          )}
-          {/* キニナル！（右下） */}
-          <div className="absolute bottom-3 right-3">
-            <KininarouButton count={clinic.kininarouCount} compact />
-          </div>
-          {/* 下部グラデーション */}
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/40 to-transparent" />
-        </div>
-
-        {/* フッター（最小限） */}
-        <div className="px-4 py-3 flex items-center justify-between">
-          <div className="min-w-0">
-            <h3 className="font-heading font-bold text-ha-text text-base leading-tight truncate">
-              {clinic.name}
-            </h3>
-            <p className="flex items-center gap-1 text-xs text-text-muted mt-0.5">
-              <MapPin size={10} />
-              {clinic.city}
-              {clinic.specialties[0] && (
-                <span className="ml-1 px-1.5 py-0.5 bg-ha-bg-subtle rounded text-primary text-[10px]">
-                  {clinic.specialties[0]}
-                </span>
-              )}
-            </p>
-          </div>
-          <ChevronRight size={16} className="text-text-muted shrink-0 ml-2" />
-        </div>
-      </Link>
-    );
+  // Instagram投稿から最大3枚取得、足りない場合はheroImageで埋める
+  const photos: string[] = [];
+  for (const post of clinic.instagramPosts) {
+    if (photos.length >= 3) break;
+    photos.push(post.mediaUrl);
+  }
+  while (photos.length < 3) {
+    photos.push(clinic.heroImageUrl);
   }
 
-  // variant === "grid"
   return (
     <Link
       href={`/clinics/${clinic.slug}`}
       className={cn(
-        "block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in-up",
+        "block bg-white rounded-lg overflow-hidden border border-ha-border hover:border-ha-text/20 hover:shadow-lg transition-all duration-200 animate-fade-in-up",
         className
       )}
     >
-      {/* 写真（モバイルh-56 / PCはグリッド幅に応じて拡大） */}
-      <div className="relative h-56 md:h-64 overflow-hidden">
-        <Image
-          src={mainImg}
-          alt={`${clinic.name}の写真`}
-          fill
-          sizes="(max-width: 768px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 hover:scale-105"
-        />
+      {/* 写真グリッド: 3列 正方形 */}
+      <div className="relative grid grid-cols-3 gap-px bg-ha-border">
+        {photos.map((url, i) => (
+          <div key={i} className="relative aspect-square overflow-hidden bg-ha-bg-subtle">
+            <Image
+              src={url}
+              alt={`${clinic.name}の写真 ${i + 1}`}
+              fill
+              sizes="(max-width: 768px) 33vw, 12vw"
+              className="object-cover"
+            />
+          </div>
+        ))}
 
-        {/* 下部グラデーションオーバーレイ */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-
-        {/* PRバッジ（左上） */}
+        {/* PRバッジ */}
         {sponsored && (
-          <div className="absolute top-2 left-2 bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider z-10">
+          <div className="absolute top-1.5 left-1.5 bg-ha-text text-white text-[10px] font-bold px-1.5 py-0.5 rounded z-10">
             PR
           </div>
         )}
-        {/* 評価（右上） */}
-        <div className="absolute top-2 right-2 flex items-center gap-0.5 bg-black/50 backdrop-blur-sm text-white text-xs font-number font-semibold px-1.5 py-0.5 rounded-full">
-          <Star size={10} className="fill-accent text-accent" />
-          {clinic.reviewAverage.toFixed(1)}
-        </div>
+      </div>
 
-        {/* キニナル！（右下、オーバーレイ上） */}
-        <div className="absolute bottom-10 right-2">
-          <KininarouButton count={clinic.kininarouCount} compact />
+      {/* 医院情報 */}
+      <div className="px-3 py-2.5">
+        <h3 className="font-bold text-ha-text text-sm leading-tight truncate">
+          {clinic.name}
+        </h3>
+        <div className="flex items-center gap-1.5 mt-1 text-xs text-text-muted">
+          <span>{clinic.city}</span>
+          {clinic.specialties[0] && (
+            <>
+              <span className="text-ha-border">|</span>
+              <span>{clinic.specialties[0]}</span>
+            </>
+          )}
         </div>
-
-        {/* テキストオーバーレイ（下部） */}
-        <div className="absolute bottom-0 left-0 right-0 p-3 pr-14">
-          <h3 className="font-heading font-bold text-white text-sm leading-tight line-clamp-1">
-            {clinic.name}
-          </h3>
-          <div className="flex items-center gap-1 mt-0.5">
-            <MapPin size={10} className="text-white/70" />
-            <span className="text-white/70 text-xs">{clinic.city}</span>
-            <span
-              className={cn(
-                "ml-1 flex items-center gap-0.5 text-[10px] font-medium",
-                status === "open" ? "text-status-open" : "text-white/50"
-              )}
-            >
-              <Clock size={9} />
-              {status === "open" ? "営業中" : "休診"}
-            </span>
+        <div className="flex items-center justify-between mt-1.5">
+          <div className="flex items-center gap-2 text-xs">
+            <span className="font-bold text-ha-text">{clinic.reviewAverage.toFixed(1)}</span>
+            <span className="text-text-muted">({clinic.reviewCount}件)</span>
           </div>
+          <span
+            className={cn(
+              "text-[11px] font-medium",
+              status === "open" ? "text-status-open" : "text-text-muted"
+            )}
+          >
+            {status === "open" ? "営業中" : "休診"}
+          </span>
         </div>
       </div>
     </Link>

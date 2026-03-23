@@ -45,13 +45,13 @@ export function ClinicHours({ clinic }: ClinicHoursProps) {
                   isToday && "bg-ha-bg-subtle"
                 )}
               >
-                <td className={cn("w-12 px-4 py-2.5 font-medium", isToday && "text-primary")}>
+                <td className={cn("w-12 px-4 py-2.5 font-medium", isToday && "text-ha-text font-bold")}>
                   {DAY_LABELS[day]}
                   {isToday && (
-                    <span className="ml-1 text-xs text-primary">今日</span>
+                    <span className="ml-1 text-xs text-text-muted">今日</span>
                   )}
                 </td>
-                <td className="px-4 py-2.5 font-number text-ha-text">
+                <td className="px-4 py-2.5 tabular-nums text-ha-text">
                   {hours ? (
                     <span>
                       {hours.open} – {hours.close}

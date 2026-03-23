@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Search, Map, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const tabs = [
-  { href: "/", label: "ホーム", icon: Home },
-  { href: "/search", label: "さがす", icon: Search },
-  { href: "/map", label: "マップ", icon: Map },
-  { href: "/mypage", label: "マイページ", icon: User },
+  { href: "/", label: "ホーム" },
+  { href: "/search", label: "さがす" },
+  { href: "/map", label: "マップ" },
+  { href: "/mypage", label: "マイページ" },
 ];
 
 export function BottomNav() {
@@ -17,24 +16,22 @@ export function BottomNav() {
 
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-ha-border shadow-lg">
-      <div className="grid grid-cols-4 h-16 pb-safe">
-        {tabs.map(({ href, label, icon: Icon }) => {
+      <div className="grid grid-cols-4 h-14 pb-safe">
+        {tabs.map(({ href, label }) => {
           const active = pathname === href;
           return (
             <Link
               key={href}
               href={href}
               className={cn(
-                "relative flex flex-col items-center justify-center gap-0.5 text-xs font-medium transition-colors",
-                active ? "text-primary" : "text-text-muted"
+                "relative flex items-center justify-center text-xs font-medium transition-colors",
+                active ? "text-primary font-bold" : "text-text-muted"
               )}
             >
-              {/* アクティブインジケーター（上部ライン） */}
               {active && (
                 <span className="absolute top-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-primary rounded-full" />
               )}
-              <Icon size={20} strokeWidth={active ? 2.5 : 1.8} />
-              <span>{label}</span>
+              {label}
             </Link>
           );
         })}
