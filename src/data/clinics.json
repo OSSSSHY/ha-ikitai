@@ -1,0 +1,1041 @@
+[
+  {
+    "id": "clinic-001",
+    "slug": "sakura-dental-gakuenmae",
+    "name": "さくら歯科クリニック",
+    "nameKana": "さくらしかくりにっく",
+    "description": "学園前駅徒歩3分。最新のデジタル設備を導入し、痛みの少ない治療を心がけています。お子様連れの方も安心のキッズスペース完備。Instagram で院内の雰囲気や症例をご紹介しています。",
+    "postalCode": "631-0036",
+    "prefecture": "奈良県",
+    "city": "奈良市",
+    "address": "学園北1-1-1",
+    "building": "学園前メディカルビル3F",
+    "latitude": 34.6945,
+    "longitude": 135.755,
+    "phone": "0742-51-1234",
+    "websiteUrl": "https://example.com/sakura-dental",
+    "googleMapsUrl": "https://maps.google.com/?q=34.6945,135.7550",
+    "instagramAccount": "@sakura_dental_nara",
+    "instagramConnected": true,
+    "instagramPosts": [
+      {
+        "id": "ig-001-1",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-001-ig1/600/600",
+        "caption": "新しい待合室が完成しました！明るく開放的な空間でリラックスしてお待ちいただけます🌸",
+        "permalink": "https://instagram.com/p/example1",
+        "timestamp": "2025-12-15T10:00:00Z"
+      },
+      {
+        "id": "ig-001-2",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-001-ig2/600/600",
+        "caption": "最新のCTスキャナーを導入しました。より精密な診断が可能になります💡",
+        "permalink": "https://instagram.com/p/example2",
+        "timestamp": "2025-12-10T14:30:00Z"
+      },
+      {
+        "id": "ig-001-3",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-001-ig3/600/600",
+        "caption": "スタッフ全員で研修に参加してきました！チームワークばっちりです😊",
+        "permalink": "https://instagram.com/p/example3",
+        "timestamp": "2025-12-05T09:00:00Z"
+      },
+      {
+        "id": "ig-001-4",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-001-ig4/600/600",
+        "caption": "キッズスペースをリニューアル🎨 お子様も楽しく過ごせる空間に！",
+        "permalink": "https://instagram.com/p/example4",
+        "timestamp": "2025-11-28T11:00:00Z"
+      },
+      {
+        "id": "ig-001-5",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-001-ig5/600/600",
+        "caption": "紅葉がきれいな季節になりました🍁 学園前駅からの道順をご紹介します",
+        "permalink": "https://instagram.com/p/example5",
+        "timestamp": "2025-11-20T16:00:00Z"
+      },
+      {
+        "id": "ig-001-6",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-001-ig6/600/600",
+        "caption": "ホワイトニングキャンペーン実施中✨ 年末年始に向けて白い歯で笑顔に！",
+        "permalink": "https://instagram.com/p/example6",
+        "timestamp": "2025-11-15T13:00:00Z"
+      }
+    ],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-001-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-001-thumb/400/300",
+    "specialties": [
+      "一般歯科",
+      "矯正歯科",
+      "審美歯科",
+      "小児歯科"
+    ],
+    "features": [
+      "キッズスペース",
+      "個室あり",
+      "駐車場",
+      "土曜診療",
+      "女性医師"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "火": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "水": null,
+      "木": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "金": {
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "土": {
+        "open": "09:00",
+        "close": "17:00"
+      },
+      "日": null
+    },
+    "closedDays": [
+      "水",
+      "日",
+      "祝"
+    ],
+    "kininarouCount": 248,
+    "reviewCount": 32,
+    "reviewAverage": 4.5,
+    "reviews": [
+      {
+        "id": "rev-001-1",
+        "userName": "はなこ",
+        "rating": 5,
+        "title": "子連れでも安心して通えます",
+        "body": "キッズスペースが充実していて、3歳の娘も飽きずに待てました。先生の説明も丁寧で、治療方針をしっかり話してくれます。院内もとても清潔で、Instagramの写真通りの雰囲気です。",
+        "treatmentType": "一般歯科",
+        "visitDate": "2025-11-20",
+        "createdAt": "2025-11-22T10:00:00Z"
+      },
+      {
+        "id": "rev-001-2",
+        "userName": "たかし",
+        "rating": 4,
+        "title": "ホワイトニングで大満足",
+        "body": "オフィスホワイトニングを受けました。1回でかなり白くなり、スタッフの方も優しくて良かったです。駐車場があるので車でも通いやすいです。",
+        "treatmentType": "審美歯科",
+        "visitDate": "2025-10-15",
+        "createdAt": "2025-10-18T14:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-002",
+    "slug": "nara-smile-dental",
+    "name": "なら笑顔歯科",
+    "nameKana": "ならえがおしか",
+    "description": "近鉄奈良駅から徒歩5分。「笑顔で帰れる歯医者さん」をモットーに、怖くない・痛くない治療を追求しています。矯正治療に力を入れており、マウスピース矯正の実績多数。",
+    "postalCode": "630-8224",
+    "prefecture": "奈良県",
+    "city": "奈良市",
+    "address": "角振町28-3",
+    "building": "ならまちプラザ2F",
+    "latitude": 34.6801,
+    "longitude": 135.8288,
+    "phone": "0742-22-5678",
+    "websiteUrl": "https://example.com/nara-smile",
+    "googleMapsUrl": "https://maps.google.com/?q=34.6801,135.8288",
+    "instagramAccount": "@nara_smile_dental",
+    "instagramConnected": true,
+    "instagramPosts": [
+      {
+        "id": "ig-002-1",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-002-ig1/600/600",
+        "caption": "リラックスできる待合室でお待ちしています☺️",
+        "permalink": "https://instagram.com/p/example7",
+        "timestamp": "2025-12-12T10:00:00Z"
+      },
+      {
+        "id": "ig-002-2",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-002-ig2/600/600",
+        "caption": "マウスピース矯正の無料カウンセリング受付中です✨",
+        "permalink": "https://instagram.com/p/example8",
+        "timestamp": "2025-12-08T15:00:00Z"
+      },
+      {
+        "id": "ig-002-3",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-002-ig3/600/600",
+        "caption": "チーム全員で患者様をサポートします！",
+        "permalink": "https://instagram.com/p/example9",
+        "timestamp": "2025-12-01T11:00:00Z"
+      }
+    ],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-002-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-002-thumb/400/300",
+    "specialties": [
+      "一般歯科",
+      "矯正歯科",
+      "審美歯科"
+    ],
+    "features": [
+      "駅近",
+      "夜間診療",
+      "マウスピース矯正",
+      "カード決済"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "火": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "水": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "木": null,
+      "金": {
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "土": {
+        "open": "10:00",
+        "close": "18:00"
+      },
+      "日": null
+    },
+    "closedDays": [
+      "木",
+      "日",
+      "祝"
+    ],
+    "kininarouCount": 186,
+    "reviewCount": 24,
+    "reviewAverage": 4.3,
+    "reviews": [
+      {
+        "id": "rev-002-1",
+        "userName": "みき",
+        "rating": 5,
+        "title": "マウスピース矯正で人生変わりました",
+        "body": "ずっと歯並びがコンプレックスだったのですが、こちらでマウスピース矯正を始めて半年。目に見えて変化があり嬉しいです。先生が毎回丁寧に経過を見てくれます。",
+        "treatmentType": "矯正歯科",
+        "visitDate": "2025-11-10",
+        "createdAt": "2025-11-12T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-003",
+    "slug": "ikoma-family-dental",
+    "name": "いこまファミリー歯科",
+    "nameKana": "いこまふぁみりーしか",
+    "description": "生駒駅直結のファミリー向け歯科医院。0歳からシニアまで、家族みんなで通える医院を目指しています。予防歯科に特化し、定期メンテナンスプログラムが人気です。",
+    "postalCode": "630-0257",
+    "prefecture": "奈良県",
+    "city": "生駒市",
+    "address": "元町1-3-15",
+    "building": "生駒駅前ビル4F",
+    "latitude": 34.6917,
+    "longitude": 135.7006,
+    "phone": "0743-73-9012",
+    "websiteUrl": "https://example.com/ikoma-family",
+    "googleMapsUrl": "https://maps.google.com/?q=34.6917,135.7006",
+    "instagramAccount": "@ikoma_family_dental",
+    "instagramConnected": true,
+    "instagramPosts": [
+      {
+        "id": "ig-003-1",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-003-ig1/600/600",
+        "caption": "お子様向けフッ素塗布キャンペーン実施中🎈",
+        "permalink": "https://instagram.com/p/example10",
+        "timestamp": "2025-12-14T10:00:00Z"
+      },
+      {
+        "id": "ig-003-2",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-003-ig2/600/600",
+        "caption": "院内をクリスマス仕様に飾り付けました🎄",
+        "permalink": "https://instagram.com/p/example11",
+        "timestamp": "2025-12-10T09:00:00Z"
+      },
+      {
+        "id": "ig-003-3",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-003-ig3/600/600",
+        "caption": "予防歯科プログラムのご案内💎 虫歯ゼロを目指しましょう",
+        "permalink": "https://instagram.com/p/example12",
+        "timestamp": "2025-12-03T14:00:00Z"
+      }
+    ],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-003-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-003-thumb/400/300",
+    "specialties": [
+      "一般歯科",
+      "小児歯科",
+      "予防歯科"
+    ],
+    "features": [
+      "キッズスペース",
+      "駅直結",
+      "バリアフリー",
+      "土日診療",
+      "予約制"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "09:30",
+        "close": "18:30"
+      },
+      "火": {
+        "open": "09:30",
+        "close": "18:30"
+      },
+      "水": {
+        "open": "09:30",
+        "close": "18:30"
+      },
+      "木": {
+        "open": "09:30",
+        "close": "18:30"
+      },
+      "金": {
+        "open": "09:30",
+        "close": "18:30"
+      },
+      "土": {
+        "open": "09:30",
+        "close": "17:00"
+      },
+      "日": {
+        "open": "09:30",
+        "close": "14:00"
+      }
+    },
+    "closedDays": [
+      "祝"
+    ],
+    "kininarouCount": 312,
+    "reviewCount": 45,
+    "reviewAverage": 4.7,
+    "reviews": [
+      {
+        "id": "rev-003-1",
+        "userName": "ゆうこ",
+        "rating": 5,
+        "title": "家族で10年通っています",
+        "body": "子供が0歳の時から通い始めて、今では家族4人でお世話になっています。先生もスタッフも顔を覚えてくれていて、毎回安心して通えます。予防歯科のプログラムのおかげで子供は虫歯ゼロです！",
+        "treatmentType": "予防歯科",
+        "visitDate": "2025-12-01",
+        "createdAt": "2025-12-03T10:00:00Z"
+      },
+      {
+        "id": "rev-003-2",
+        "userName": "けんじ",
+        "rating": 4,
+        "title": "日曜も開いていて助かる",
+        "body": "平日は仕事で通えないので、日曜診療があるのは本当にありがたいです。駅直結なので雨の日も濡れずに行けます。",
+        "treatmentType": "一般歯科",
+        "visitDate": "2025-11-25",
+        "createdAt": "2025-11-27T15:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-004",
+    "slug": "kashihara-beauty-dental",
+    "name": "橿原ビューティー歯科",
+    "nameKana": "かしはらびゅーてぃーしか",
+    "description": "審美歯科・ホワイトニング専門。完全個室でプライバシーに配慮した空間。セラミック治療、ラミネートベニア、ホワイトニングなど美しい口元を追求します。",
+    "postalCode": "634-0078",
+    "prefecture": "奈良県",
+    "city": "橿原市",
+    "address": "八木町1-6-12",
+    "building": "八木駅前タワー5F",
+    "latitude": 34.5085,
+    "longitude": 135.793,
+    "phone": "0744-29-3456",
+    "websiteUrl": "https://example.com/kashihara-beauty",
+    "googleMapsUrl": "https://maps.google.com/?q=34.5085,135.7930",
+    "instagramAccount": "@kashihara_beauty_dental",
+    "instagramConnected": true,
+    "instagramPosts": [
+      {
+        "id": "ig-004-1",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-004-ig1/600/600",
+        "caption": "セラミック治療のビフォーアフター✨ 自然で美しい仕上がりに",
+        "permalink": "https://instagram.com/p/example13",
+        "timestamp": "2025-12-13T11:00:00Z"
+      },
+      {
+        "id": "ig-004-2",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-004-ig2/600/600",
+        "caption": "完全個室の診療室。リラックスして治療を受けていただけます🌿",
+        "permalink": "https://instagram.com/p/example14",
+        "timestamp": "2025-12-06T10:00:00Z"
+      },
+      {
+        "id": "ig-004-3",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-004-ig3/600/600",
+        "caption": "オフィスホワイトニング、1回でこんなに変わります💎",
+        "permalink": "https://instagram.com/p/example15",
+        "timestamp": "2025-11-30T13:00:00Z"
+      }
+    ],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-004-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-004-thumb/400/300",
+    "specialties": [
+      "審美歯科",
+      "ホワイトニング",
+      "一般歯科"
+    ],
+    "features": [
+      "完全個室",
+      "女性医師",
+      "カード決済",
+      "駅近",
+      "無料カウンセリング"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "10:00",
+        "close": "19:00"
+      },
+      "火": {
+        "open": "10:00",
+        "close": "19:00"
+      },
+      "水": null,
+      "木": {
+        "open": "10:00",
+        "close": "19:00"
+      },
+      "金": {
+        "open": "10:00",
+        "close": "19:00"
+      },
+      "土": {
+        "open": "10:00",
+        "close": "18:00"
+      },
+      "日": null
+    },
+    "closedDays": [
+      "水",
+      "日",
+      "祝"
+    ],
+    "kininarouCount": 156,
+    "reviewCount": 18,
+    "reviewAverage": 4.6,
+    "reviews": [
+      {
+        "id": "rev-004-1",
+        "userName": "あやか",
+        "rating": 5,
+        "title": "完全個室で安心でした",
+        "body": "他の患者さんの目を気にせず治療を受けられるので、審美歯科が初めてでもリラックスできました。先生のセンスが良く、自然な仕上がりで大満足です。",
+        "treatmentType": "審美歯科",
+        "visitDate": "2025-11-18",
+        "createdAt": "2025-11-20T11:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-005",
+    "slug": "tenri-implant-center",
+    "name": "天理インプラントセンター",
+    "nameKana": "てんりいんぷらんとせんたー",
+    "description": "インプラント治療のスペシャリスト。年間200本以上の埋入実績。CT完備で安心・安全な治療を提供。他院で断られた難症例にも対応します。",
+    "postalCode": "632-0016",
+    "prefecture": "奈良県",
+    "city": "天理市",
+    "address": "川原城町680-1",
+    "building": null,
+    "latitude": 34.5961,
+    "longitude": 135.8372,
+    "phone": "0743-62-7890",
+    "websiteUrl": "https://example.com/tenri-implant",
+    "googleMapsUrl": "https://maps.google.com/?q=34.5961,135.8372",
+    "instagramAccount": "@tenri_implant",
+    "instagramConnected": false,
+    "instagramPosts": [],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-005-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-005-thumb/400/300",
+    "specialties": [
+      "インプラント",
+      "口腔外科",
+      "一般歯科"
+    ],
+    "features": [
+      "CT完備",
+      "駐車場",
+      "セカンドオピニオン対応",
+      "バリアフリー"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "09:00",
+        "close": "18:00"
+      },
+      "火": {
+        "open": "09:00",
+        "close": "18:00"
+      },
+      "水": {
+        "open": "09:00",
+        "close": "18:00"
+      },
+      "木": null,
+      "金": {
+        "open": "09:00",
+        "close": "18:00"
+      },
+      "土": {
+        "open": "09:00",
+        "close": "16:00"
+      },
+      "日": null
+    },
+    "closedDays": [
+      "木",
+      "日",
+      "祝"
+    ],
+    "kininarouCount": 89,
+    "reviewCount": 12,
+    "reviewAverage": 4.1,
+    "reviews": [
+      {
+        "id": "rev-005-1",
+        "userName": "まさお",
+        "rating": 4,
+        "title": "他院で断られたインプラントができた",
+        "body": "骨が薄いと他院で断られましたが、こちらでは骨造成から丁寧に対応してくれました。手術も思ったより痛くなく、今は快適に食事ができています。",
+        "treatmentType": "インプラント",
+        "visitDate": "2025-10-05",
+        "createdAt": "2025-10-10T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-006",
+    "slug": "koriyama-kodomo-dental",
+    "name": "こおりやまこども歯科",
+    "nameKana": "こおりやまこどもしか",
+    "description": "大和郡山市の小児歯科専門医院。0歳から中学生まで、お子様専門の歯科医師が丁寧に診療します。怖くない・楽しい雰囲気づくりを大切にしています。",
+    "postalCode": "639-1007",
+    "prefecture": "奈良県",
+    "city": "大和郡山市",
+    "address": "南郡山町529-1",
+    "building": null,
+    "latitude": 34.6467,
+    "longitude": 135.7831,
+    "phone": "0743-53-4567",
+    "websiteUrl": "https://example.com/koriyama-kodomo",
+    "googleMapsUrl": "https://maps.google.com/?q=34.6467,135.7831",
+    "instagramAccount": "@koriyama_kodomo",
+    "instagramConnected": true,
+    "instagramPosts": [
+      {
+        "id": "ig-006-1",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-006-ig1/600/600",
+        "caption": "今日のがんばった子にはガチャガチャのプレゼント🎁",
+        "permalink": "https://instagram.com/p/example16",
+        "timestamp": "2025-12-11T10:00:00Z"
+      },
+      {
+        "id": "ig-006-2",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-006-ig2/600/600",
+        "caption": "院内はカラフルで楽しい雰囲気🌈 怖くないよ！",
+        "permalink": "https://instagram.com/p/example17",
+        "timestamp": "2025-12-04T09:00:00Z"
+      },
+      {
+        "id": "ig-006-3",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-006-ig3/600/600",
+        "caption": "正しい歯みがきの仕方を楽しく教えます🪥✨",
+        "permalink": "https://instagram.com/p/example18",
+        "timestamp": "2025-11-27T11:00:00Z"
+      }
+    ],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-006-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-006-thumb/400/300",
+    "specialties": [
+      "小児歯科",
+      "予防歯科",
+      "矯正歯科"
+    ],
+    "features": [
+      "キッズスペース",
+      "駐車場",
+      "ベビーカーOK",
+      "小児歯科専門医"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "09:30",
+        "close": "18:00"
+      },
+      "火": {
+        "open": "09:30",
+        "close": "18:00"
+      },
+      "水": null,
+      "木": {
+        "open": "09:30",
+        "close": "18:00"
+      },
+      "金": {
+        "open": "09:30",
+        "close": "18:00"
+      },
+      "土": {
+        "open": "09:30",
+        "close": "16:00"
+      },
+      "日": null
+    },
+    "closedDays": [
+      "水",
+      "日",
+      "祝"
+    ],
+    "kininarouCount": 205,
+    "reviewCount": 38,
+    "reviewAverage": 4.8,
+    "reviews": [
+      {
+        "id": "rev-006-1",
+        "userName": "りえ",
+        "rating": 5,
+        "title": "歯医者嫌いだった息子が楽しく通っています",
+        "body": "以前の歯医者では大泣きだった4歳の息子が、ここでは自分から「歯医者行きたい！」と言うようになりました。ガチャガチャのご褒美も嬉しいみたいです。先生もスタッフも子供の扱いがプロです。",
+        "treatmentType": "小児歯科",
+        "visitDate": "2025-11-30",
+        "createdAt": "2025-12-02T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-007",
+    "slug": "saidaiji-digital-dental",
+    "name": "西大寺デジタル歯科",
+    "nameKana": "さいだいじでじたるしか",
+    "description": "口腔内スキャナー・3Dプリンター・CAD/CAMを駆使した最先端のデジタル歯科治療。型取り不要のストレスフリーな診療体験を提供します。",
+    "postalCode": "631-0816",
+    "prefecture": "奈良県",
+    "city": "奈良市",
+    "address": "西大寺栄町3-20",
+    "building": "西大寺駅前NKビル2F",
+    "latitude": 34.6962,
+    "longitude": 135.7656,
+    "phone": "0742-33-2345",
+    "websiteUrl": "https://example.com/saidaiji-digital",
+    "googleMapsUrl": "https://maps.google.com/?q=34.6962,135.7656",
+    "instagramAccount": "@saidaiji_digital",
+    "instagramConnected": true,
+    "instagramPosts": [
+      {
+        "id": "ig-007-1",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-007-ig1/600/600",
+        "caption": "口腔内スキャナーで型取りが不要に！快適な治療体験を🔬",
+        "permalink": "https://instagram.com/p/example19",
+        "timestamp": "2025-12-09T10:00:00Z"
+      },
+      {
+        "id": "ig-007-2",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-007-ig2/600/600",
+        "caption": "CAD/CAMで製作した e.maxクラウン。天然歯のような美しさ💎",
+        "permalink": "https://instagram.com/p/example20",
+        "timestamp": "2025-12-02T14:00:00Z"
+      },
+      {
+        "id": "ig-007-3",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-007-ig3/600/600",
+        "caption": "清潔感のある診療室で安心の治療を",
+        "permalink": "https://instagram.com/p/example21",
+        "timestamp": "2025-11-25T10:00:00Z"
+      }
+    ],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-007-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-007-thumb/400/300",
+    "specialties": [
+      "一般歯科",
+      "審美歯科",
+      "セラミック治療"
+    ],
+    "features": [
+      "口腔内スキャナー",
+      "CAD/CAM",
+      "駅近",
+      "土曜診療",
+      "カード決済"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "09:30",
+        "close": "19:00"
+      },
+      "火": {
+        "open": "09:30",
+        "close": "19:00"
+      },
+      "水": {
+        "open": "09:30",
+        "close": "19:00"
+      },
+      "木": null,
+      "金": {
+        "open": "09:30",
+        "close": "19:00"
+      },
+      "土": {
+        "open": "09:30",
+        "close": "17:00"
+      },
+      "日": null
+    },
+    "closedDays": [
+      "木",
+      "日",
+      "祝"
+    ],
+    "kininarouCount": 134,
+    "reviewCount": 15,
+    "reviewAverage": 4.4,
+    "reviews": [
+      {
+        "id": "rev-007-1",
+        "userName": "しんご",
+        "rating": 5,
+        "title": "型取り不要で感動しました",
+        "body": "以前の歯医者では型取りで毎回えずいていたのですが、口腔内スキャナーで一瞬で終わりました。セラミックの被せ物も自然で、技工士さんの腕も良いと思います。",
+        "treatmentType": "審美歯科",
+        "visitDate": "2025-11-15",
+        "createdAt": "2025-11-18T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-008",
+    "slug": "gojo-dental-clinic",
+    "name": "五條やすらぎ歯科",
+    "nameKana": "ごじょうやすらぎしか",
+    "description": "五條市の地域密着型歯科医院。訪問歯科にも対応し、通院が難しい方にもお口の健康をお届けします。アットホームな雰囲気で、地域の皆様に愛されて30年。",
+    "postalCode": "637-0043",
+    "prefecture": "奈良県",
+    "city": "五條市",
+    "address": "新町1-5-8",
+    "building": null,
+    "latitude": 34.3521,
+    "longitude": 135.6946,
+    "phone": "0747-22-6789",
+    "websiteUrl": null,
+    "googleMapsUrl": "https://maps.google.com/?q=34.3521,135.6946",
+    "instagramAccount": null,
+    "instagramConnected": false,
+    "instagramPosts": [],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-008-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-008-thumb/400/300",
+    "specialties": [
+      "一般歯科",
+      "訪問歯科",
+      "入れ歯"
+    ],
+    "features": [
+      "駐車場",
+      "バリアフリー",
+      "訪問歯科対応",
+      "入れ歯専門"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "09:00",
+        "close": "17:30"
+      },
+      "火": {
+        "open": "09:00",
+        "close": "17:30"
+      },
+      "水": {
+        "open": "09:00",
+        "close": "17:30"
+      },
+      "木": {
+        "open": "09:00",
+        "close": "12:00"
+      },
+      "金": {
+        "open": "09:00",
+        "close": "17:30"
+      },
+      "土": {
+        "open": "09:00",
+        "close": "12:00"
+      },
+      "日": null
+    },
+    "closedDays": [
+      "日",
+      "祝"
+    ],
+    "kininarouCount": 42,
+    "reviewCount": 8,
+    "reviewAverage": 4.0,
+    "reviews": [
+      {
+        "id": "rev-008-1",
+        "userName": "としこ",
+        "rating": 4,
+        "title": "祖母の訪問診療をお願いしました",
+        "body": "施設に入っている祖母の入れ歯調整をお願いしました。訪問していただけるのは本当に助かります。優しい先生で祖母も安心していました。",
+        "treatmentType": "訪問歯科",
+        "visitDate": "2025-10-20",
+        "createdAt": "2025-10-25T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-009",
+    "slug": "sakurai-ortho-dental",
+    "name": "桜井矯正歯科オフィス",
+    "nameKana": "さくらいきょうせいしかおふぃす",
+    "description": "矯正歯科専門医による本格的な矯正治療。ワイヤー矯正からマウスピース矯正まで幅広く対応。無料初回カウンセリング実施中。",
+    "postalCode": "633-0068",
+    "prefecture": "奈良県",
+    "city": "桜井市",
+    "address": "東新堂32-1",
+    "building": "桜井メディカルモール1F",
+    "latitude": 34.512,
+    "longitude": 135.8456,
+    "phone": "0744-46-0123",
+    "websiteUrl": "https://example.com/sakurai-ortho",
+    "googleMapsUrl": "https://maps.google.com/?q=34.5120,135.8456",
+    "instagramAccount": "@sakurai_ortho",
+    "instagramConnected": true,
+    "instagramPosts": [
+      {
+        "id": "ig-009-1",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-009-ig1/600/600",
+        "caption": "矯正治療の流れをわかりやすくご説明します📋",
+        "permalink": "https://instagram.com/p/example22",
+        "timestamp": "2025-12-07T10:00:00Z"
+      },
+      {
+        "id": "ig-009-2",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-009-ig2/600/600",
+        "caption": "カウンセリングルームでじっくりお話しましょう☕",
+        "permalink": "https://instagram.com/p/example23",
+        "timestamp": "2025-11-29T14:00:00Z"
+      },
+      {
+        "id": "ig-009-3",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-009-ig3/600/600",
+        "caption": "裏側矯正なら目立たずに歯並びを整えられます✨",
+        "permalink": "https://instagram.com/p/example24",
+        "timestamp": "2025-11-22T10:00:00Z"
+      }
+    ],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-009-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-009-thumb/400/300",
+    "specialties": [
+      "矯正歯科"
+    ],
+    "features": [
+      "矯正専門医",
+      "無料カウンセリング",
+      "マウスピース矯正",
+      "裏側矯正",
+      "駐車場"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "10:00",
+        "close": "18:30"
+      },
+      "火": null,
+      "水": {
+        "open": "10:00",
+        "close": "18:30"
+      },
+      "木": {
+        "open": "10:00",
+        "close": "18:30"
+      },
+      "金": {
+        "open": "10:00",
+        "close": "18:30"
+      },
+      "土": {
+        "open": "10:00",
+        "close": "17:00"
+      },
+      "日": {
+        "open": "10:00",
+        "close": "14:00"
+      }
+    },
+    "closedDays": [
+      "火",
+      "祝"
+    ],
+    "kininarouCount": 167,
+    "reviewCount": 22,
+    "reviewAverage": 4.5,
+    "reviews": [
+      {
+        "id": "rev-009-1",
+        "userName": "かなえ",
+        "rating": 5,
+        "title": "専門医の安心感が違います",
+        "body": "矯正専門医にしっかり診てもらえるので安心です。無料カウンセリングでいくつかの治療法を提案してもらい、納得した上で始められました。日曜も開いているのが助かります。",
+        "treatmentType": "矯正歯科",
+        "visitDate": "2025-11-03",
+        "createdAt": "2025-11-05T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "clinic-010",
+    "slug": "yamato-takada-night-dental",
+    "name": "大和高田ナイト歯科",
+    "nameKana": "やまとたかだないとしか",
+    "description": "平日21時まで診療。お仕事帰りにも通えるナイトタイム特化の歯科医院。急患にも対応し、突然の歯の痛みにも駆け込めます。",
+    "postalCode": "635-0015",
+    "prefecture": "奈良県",
+    "city": "大和高田市",
+    "address": "幸町3-18",
+    "building": "高田駅前プラザ1F",
+    "latitude": 34.5151,
+    "longitude": 135.736,
+    "phone": "0745-52-8901",
+    "websiteUrl": "https://example.com/yamato-night",
+    "googleMapsUrl": "https://maps.google.com/?q=34.5151,135.7360",
+    "instagramAccount": "@yamato_night_dental",
+    "instagramConnected": true,
+    "instagramPosts": [
+      {
+        "id": "ig-010-1",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-010-ig1/600/600",
+        "caption": "夜21時まで診療中🌙 お仕事帰りにお気軽にお越しください",
+        "permalink": "https://instagram.com/p/example25",
+        "timestamp": "2025-12-08T19:00:00Z"
+      },
+      {
+        "id": "ig-010-2",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-010-ig2/600/600",
+        "caption": "急な歯の痛みにも対応します🆘 まずはお電話を",
+        "permalink": "https://instagram.com/p/example26",
+        "timestamp": "2025-12-01T20:00:00Z"
+      },
+      {
+        "id": "ig-010-3",
+        "mediaType": "IMAGE",
+        "mediaUrl": "https://picsum.photos/seed/clinic-010-ig3/600/600",
+        "caption": "夜でも明るく快適な院内でお待ちしています💡",
+        "permalink": "https://instagram.com/p/example27",
+        "timestamp": "2025-11-24T18:00:00Z"
+      }
+    ],
+    "heroImageUrl": "https://picsum.photos/seed/clinic-010-hero/800/500",
+    "thumbnailUrl": "https://picsum.photos/seed/clinic-010-thumb/400/300",
+    "specialties": [
+      "一般歯科",
+      "口腔外科",
+      "審美歯科"
+    ],
+    "features": [
+      "夜間診療",
+      "急患対応",
+      "駅近",
+      "土曜診療",
+      "カード決済"
+    ],
+    "openingHours": {
+      "月": {
+        "open": "12:00",
+        "close": "21:00"
+      },
+      "火": {
+        "open": "12:00",
+        "close": "21:00"
+      },
+      "水": {
+        "open": "12:00",
+        "close": "21:00"
+      },
+      "木": {
+        "open": "12:00",
+        "close": "21:00"
+      },
+      "金": {
+        "open": "12:00",
+        "close": "21:00"
+      },
+      "土": {
+        "open": "10:00",
+        "close": "18:00"
+      },
+      "日": null
+    },
+    "closedDays": [
+      "日",
+      "祝"
+    ],
+    "kininarouCount": 198,
+    "reviewCount": 28,
+    "reviewAverage": 4.2,
+    "reviews": [
+      {
+        "id": "rev-010-1",
+        "userName": "だいすけ",
+        "rating": 4,
+        "title": "仕事帰りに通えるのが最高",
+        "body": "残業が多い仕事なので、21時まで開いているのは本当にありがたいです。急に歯が痛くなった時もすぐに診てもらえて助かりました。",
+        "treatmentType": "一般歯科",
+        "visitDate": "2025-11-28",
+        "createdAt": "2025-11-30T22:00:00Z"
+      },
+      {
+        "id": "rev-010-2",
+        "userName": "さやか",
+        "rating": 4,
+        "title": "急患で駆け込みました",
+        "body": "金曜の夜に突然歯が痛くなり、電話したらすぐに診てもらえました。応急処置が丁寧で、その後の治療計画もしっかり立ててもらえて安心しました。",
+        "treatmentType": "一般歯科",
+        "visitDate": "2025-11-14",
+        "createdAt": "2025-11-16T10:00:00Z"
+      }
+    ]
+  }
+]

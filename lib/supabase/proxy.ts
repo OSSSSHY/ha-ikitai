@@ -1,17 +1,12 @@
-import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-import { hasEnvVars } from "../utils";
 
+// MVP段階ではSupabase認証なし。全リクエストをそのまま通す。
 export async function updateSession(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({
-    request,
-  });
+  const supabaseResponse = NextResponse.next({ request });
+  return supabaseResponse;
 
-  // If the env vars are not set, skip proxy check. You can remove this
-  // once you setup the project.
-  if (!hasEnvVars) {
-    return supabaseResponse;
-  }
+  // 以下はPhase2でSupabase認証を有効化する際に使用
+  /*
 
   // With Fluid compute, don't put this client in a global environment
   // variable. Always create a new one on each request.
@@ -73,4 +68,5 @@ export async function updateSession(request: NextRequest) {
   // of sync and terminate the user's session prematurely!
 
   return supabaseResponse;
+  */
 }

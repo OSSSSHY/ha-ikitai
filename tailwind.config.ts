@@ -11,6 +11,26 @@ export default {
   theme: {
     extend: {
       colors: {
+        /* ハイキタイ カスタムカラー */
+        primary: {
+          DEFAULT: "var(--color-primary)",
+          light: "var(--color-primary-light)",
+          dark: "var(--color-primary-dark)",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        accent: {
+          DEFAULT: "var(--color-accent)",
+          light: "var(--color-accent-light)",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        "ha-bg": "var(--color-bg)",
+        "ha-bg-subtle": "var(--color-bg-subtle)",
+        "ha-text": "var(--color-text)",
+        "text-muted": "var(--color-text-muted)",
+        "ha-border": "var(--color-border)",
+        "status-open": "var(--color-open)",
+        "status-closed": "var(--color-closed)",
+        /* shadcn/ui 互換 */
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -21,10 +41,6 @@ export default {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -33,10 +49,6 @@ export default {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -44,13 +56,11 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
-        },
+      },
+      fontFamily: {
+        heading: ['"Zen Maru Gothic"', "sans-serif"],
+        body: ['"Noto Sans JP"', "sans-serif"],
+        number: ['"Plus Jakarta Sans"', "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
