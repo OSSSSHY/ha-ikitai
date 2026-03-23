@@ -99,10 +99,10 @@ export default function HomePage() {
             }
           >
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
-              {/* PRカード（全幅固定・最上部） */}
-              <div className="col-span-2 md:col-span-3">
-                <ClinicCard clinic={popularClinics[0]} variant="feed" sponsored />
-              </div>
+              {/* PRカード（最大3医院・横並び） */}
+              {popularClinics.slice(0, 3).map((clinic) => (
+                <ClinicCard key={`pr-${clinic.id}`} clinic={clinic} variant="grid" sponsored />
+              ))}
               {/* 1枚目: モバイル全幅 / PC 1列目 */}
               <div className="col-span-2 md:col-span-1">
                 <ClinicCard clinic={popularClinics[0]} variant="feed" className="h-full" />
