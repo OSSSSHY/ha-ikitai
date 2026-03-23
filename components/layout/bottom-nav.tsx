@@ -16,8 +16,8 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-ha-border">
-      <div className="grid grid-cols-4 h-16">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-ha-border shadow-lg">
+      <div className="grid grid-cols-4 h-16 pb-safe">
         {tabs.map(({ href, label, icon: Icon }) => {
           const active = pathname === href;
           return (
@@ -25,10 +25,14 @@ export function BottomNav() {
               key={href}
               href={href}
               className={cn(
-                "flex flex-col items-center justify-center gap-0.5 text-xs font-medium transition-colors",
+                "relative flex flex-col items-center justify-center gap-0.5 text-xs font-medium transition-colors",
                 active ? "text-primary" : "text-text-muted"
               )}
             >
+              {/* アクティブインジケーター（上部ライン） */}
+              {active && (
+                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-primary rounded-full" />
+              )}
               <Icon size={20} strokeWidth={active ? 2.5 : 1.8} />
               <span>{label}</span>
             </Link>

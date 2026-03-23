@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { ArrowRight, MapPin, Smile, ShieldCheck, Star, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, MapPin, Search } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { BottomNav } from "@/components/layout/bottom-nav";
 import { ClinicCard } from "@/components/clinic/clinic-card";
 import { SearchBar } from "@/components/search/search-bar";
-import { getPopularClinics } from "@/src/lib/clinics";
+import { getAllClinics, getPopularClinics } from "@/src/lib/clinics";
 import { Suspense } from "react";
 
 const SPECIALTIES = [
@@ -28,49 +29,55 @@ const AREAS = [
 
 export default function HomePage() {
   const popularClinics = getPopularClinics(6);
+  const topClinic = popularClinics[0];
+  const allClinics = getAllClinics();
+
+  // Instagram投稿を全医院からflatMapで収集（最大30件）
+  const recentPosts = allClinics
+    .flatMap((c) =>
+      c.instagramPosts.map((p) => ({ ...p, clinicSlug: c.slug, clinicName: c.name }))
+    )
+    .slice(0, 30);
 
   return (
     <>
       <Header />
 
       <main className="pb-20 md:pb-0">
-        {/* ヒーローセクション */}
-        <section className="relative bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-8 left-8 w-64 h-64 rounded-full bg-white/20 blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/20 blur-3xl" />
-          </div>
+        {/* ===== ヒーローセクション（写真背景） ===== */}
+        <section className="relative h-[65vh] min-h-[480px] overflow-hidden">
+          {/* 背景写真 */}
+          <Image
+            src={topClinic.heroImageUrl}
+            alt="歯科医院の雰囲気"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover scale-105"
+          />
+          {/* グラデーションオーバーレイ */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80" />
 
-          <div className="relative max-w-5xl mx-auto px-4 py-16 md:py-24">
-            <div className="max-w-2xl">
-              <p className="text-primary-light text-sm font-medium mb-3 flex items-center gap-1.5">
-                <Sparkles size={14} />
-                Instagram × 歯科医院検索
-              </p>
-              <h1 className="font-heading font-bold text-3xl md:text-5xl text-white leading-tight mb-4">
-                写真で選ぶ、<br />わたしの歯医者さん
-              </h1>
-              <p className="text-white/80 text-base md:text-lg mb-8 leading-relaxed">
-                Instagramの投稿から、医院の雰囲気がわかる。<br className="hidden md:inline" />
-                清潔感・スタッフ・設備を、写真から感じ取ろう。
-              </p>
-
-              <Suspense>
-                <SearchBar className="max-w-xl" />
-              </Suspense>
-
-              <div className="mt-4 flex items-center gap-4 text-white/70 text-xs">
-                <span className="flex items-center gap-1"><ShieldCheck size={12} />安心の医院情報</span>
-                <span className="flex items-center gap-1"><Star size={12} />クチコミ付き</span>
-                <span className="flex items-center gap-1"><MapPin size={12} />奈良県全域対応</span>
-              </div>
-            </div>
+          {/* コンテンツ（下部寄せ） */}
+          <div className="relative z-10 h-full flex flex-col justify-end px-4 pb-10 max-w-2xl mx-auto w-full">
+            <p className="text-primary-light text-xs font-medium mb-2 tracking-wide uppercase opacity-90">
+              Instagram × 歯科医院検索
+            </p>
+            <h1 className="font-heading font-bold text-3xl md:text-5xl text-white leading-tight mb-3 drop-shadow-lg">
+              写真で選ぶ、<br />わたしの歯医者さん
+            </h1>
+            <p className="text-white/75 text-sm md:text-base mb-6 leading-relaxed">
+              Instagramの投稿から医院の雰囲気がわかる、新しい歯科医院検索。
+            </p>
+            <Suspense>
+              <SearchBar className="max-w-xl shadow-2xl" />
+            </Suspense>
           </div>
         </section>
 
-        {/* 人気の歯医者さん */}
-        <section className="max-w-5xl mx-auto px-4 py-12">
-          <div className="flex items-center justify-between mb-6">
+        {/* ===== 人気の歯医者さん（交互グリッド） ===== */}
+        <section className="max-w-5xl mx-auto px-4 py-10">
+          <div className="flex items-center justify-between mb-5">
             <h2 className="font-heading font-bold text-xl text-ha-text">
               🔥 人気の歯医者さん
             </h2>
@@ -82,91 +89,107 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <Suspense fallback={
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="rounded-2xl bg-ha-bg-subtle animate-pulse h-60" />
-              ))}
-            </div>
-          }>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {popularClinics.map((clinic) => (
-                <ClinicCard key={clinic.id} clinic={clinic} />
-              ))}
+          {/* 交互グリッド: feed(全幅) + grid×2 を繰り返し */}
+          <Suspense
+            fallback={
+              <div className="space-y-2">
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <div key={i} className="rounded-2xl bg-ha-bg-subtle animate-pulse h-64" />
+                ))}
+              </div>
+            }
+          >
+            <div className="grid grid-cols-2 gap-2">
+              {/* 1枚目: 全幅 feed */}
+              <div className="col-span-2">
+                <ClinicCard clinic={popularClinics[0]} variant="feed" />
+              </div>
+              {/* 2〜3枚目: grid × 2 */}
+              {popularClinics[1] && <ClinicCard clinic={popularClinics[1]} variant="grid" />}
+              {popularClinics[2] && <ClinicCard clinic={popularClinics[2]} variant="grid" />}
+              {/* 4枚目: 全幅 feed */}
+              {popularClinics[3] && (
+                <div className="col-span-2">
+                  <ClinicCard clinic={popularClinics[3]} variant="feed" />
+                </div>
+              )}
+              {/* 5〜6枚目: grid × 2 */}
+              {popularClinics[4] && <ClinicCard clinic={popularClinics[4]} variant="grid" />}
+              {popularClinics[5] && <ClinicCard clinic={popularClinics[5]} variant="grid" />}
             </div>
           </Suspense>
         </section>
 
-        {/* エリアから探す */}
-        <section className="bg-ha-bg-subtle py-12">
-          <div className="max-w-5xl mx-auto px-4">
-            <h2 className="font-heading font-bold text-xl text-ha-text mb-6">
-              📍 エリアから探す
+        {/* ===== 最近の投稿（横スクロールフィード） ===== */}
+        <section className="py-8 bg-ha-bg-subtle">
+          <div className="flex items-center justify-between px-4 mb-4">
+            <h2 className="font-heading font-bold text-xl text-ha-text">
+              📸 最近の投稿
             </h2>
-            <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
-              {AREAS.map(({ label, prefCode }) => (
-                <Link
-                  key={prefCode}
-                  href={`/search?prefecture=${encodeURIComponent(prefCode)}`}
-                  className="flex items-center justify-center gap-1.5 bg-white border border-ha-border rounded-xl py-3 text-sm font-medium text-ha-text hover:border-primary hover:text-primary transition-colors shadow-sm"
-                >
-                  <MapPin size={13} />
-                  {label}
-                </Link>
-              ))}
-            </div>
+            <Link href="/search" className="text-sm text-primary hover:underline flex items-center gap-1">
+              全て見る <ArrowRight size={14} />
+            </Link>
           </div>
-        </section>
-
-        {/* 診療科目から探す */}
-        <section className="max-w-5xl mx-auto px-4 py-12">
-          <h2 className="font-heading font-bold text-xl text-ha-text mb-6">
-            🔍 診療科目から探す
-          </h2>
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
-            {SPECIALTIES.map(({ label, icon, query }) => (
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide px-4 pb-2">
+            {recentPosts.map((post) => (
               <Link
-                key={query}
-                href={`/search?specialty=${encodeURIComponent(query)}`}
-                className="flex flex-col items-center gap-2 bg-white border border-ha-border rounded-2xl py-5 hover:border-primary hover:shadow-sm transition-all"
+                key={post.id}
+                href={`/clinics/${post.clinicSlug}`}
+                className="shrink-0 relative w-40 h-40 rounded-2xl overflow-hidden group shadow-sm"
               >
-                <span className="text-2xl">{icon}</span>
-                <span className="text-xs font-medium text-ha-text">{label}</span>
+                <Image
+                  src={post.mediaUrl}
+                  alt={post.caption ?? post.clinicName}
+                  fill
+                  sizes="160px"
+                  className="object-cover group-hover:scale-110 transition-transform duration-400"
+                />
+                {/* 医院名オーバーレイ */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <p className="text-white text-[10px] font-medium leading-tight truncate">
+                    {post.clinicName}
+                  </p>
+                </div>
               </Link>
             ))}
           </div>
         </section>
 
-        {/* 特徴アピール */}
-        <section className="bg-gradient-to-br from-ha-bg-subtle to-white py-12">
-          <div className="max-w-5xl mx-auto px-4 text-center">
-            <h2 className="font-heading font-bold text-xl text-ha-text mb-2">
-              ハイキタイが選ばれる理由
+        {/* ===== エリアから探す ===== */}
+        <section className="max-w-5xl mx-auto px-4 py-10">
+          <h2 className="font-heading font-bold text-xl text-ha-text mb-5">
+            📍 エリアから探す
+          </h2>
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+            {AREAS.map(({ label, prefCode }) => (
+              <Link
+                key={prefCode}
+                href={`/search?prefecture=${encodeURIComponent(prefCode)}`}
+                className="flex items-center justify-center gap-1 bg-white border border-ha-border rounded-xl py-3 text-sm font-medium text-ha-text hover:border-primary hover:text-primary hover:bg-ha-bg-subtle transition-colors shadow-sm"
+              >
+                <MapPin size={12} />
+                {label}
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* ===== 診療科目から探す ===== */}
+        <section className="bg-ha-bg-subtle py-10">
+          <div className="max-w-5xl mx-auto px-4">
+            <h2 className="font-heading font-bold text-xl text-ha-text mb-5">
+              🔍 診療科目から探す
             </h2>
-            <p className="text-text-muted text-sm mb-8">サウナイキタイの「サ活」体験を、歯科に。</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: "📸",
-                  title: "ビジュアルファースト",
-                  desc: "Instagram投稿から院内の雰囲気・スタッフ・設備を写真で確認できる",
-                },
-                {
-                  icon: "💛",
-                  title: "キニナル！",
-                  desc: "気になった医院をキニナル！でブックマーク。後で比較検討できる",
-                },
-                {
-                  icon: "🗺️",
-                  title: "マップ検索",
-                  desc: "現在地から近い歯医者を地図上でまとめて確認・比較できる",
-                },
-              ].map(({ icon, title, desc }) => (
-                <div key={title} className="bg-white rounded-2xl border border-ha-border p-6 text-left">
-                  <div className="text-3xl mb-3">{icon}</div>
-                  <h3 className="font-heading font-bold text-ha-text mb-2">{title}</h3>
-                  <p className="text-sm text-text-muted leading-relaxed">{desc}</p>
-                </div>
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+              {SPECIALTIES.map(({ label, icon, query }) => (
+                <Link
+                  key={query}
+                  href={`/search?specialty=${encodeURIComponent(query)}`}
+                  className="flex flex-col items-center gap-2 bg-white border border-ha-border rounded-2xl py-5 hover:border-primary hover:shadow-md transition-all"
+                >
+                  <span className="text-2xl">{icon}</span>
+                  <span className="text-xs font-medium text-ha-text">{label}</span>
+                </Link>
               ))}
             </div>
           </div>

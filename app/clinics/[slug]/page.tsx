@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import { BottomNav } from "@/components/layout/bottom-nav";
 import { KininarouButton } from "@/components/clinic/kininarou-button";
 import { ClinicStatusBadge } from "@/components/clinic/clinic-status-badge";
+import { FloatingKininarou } from "@/components/clinic/floating-kininarou";
 import { ClinicHeroImage } from "@/components/clinic/clinic-hero-image";
 import { ClinicHours } from "@/components/clinic/clinic-hours";
 import { InstagramGallery } from "@/components/instagram/instagram-gallery";
@@ -41,8 +42,8 @@ export default async function ClinicDetailPage({ params }: Props) {
       <Header />
 
       <main className="pb-24 md:pb-0">
-        {/* ヒーロー写真 */}
-        <div className="relative w-full h-56 md:h-80 bg-ha-bg-subtle overflow-hidden">
+        {/* ヒーロー写真（55vh） */}
+        <div className="relative w-full h-[55vh] min-h-[300px] max-h-[600px] bg-ha-bg-subtle overflow-hidden">
           <ClinicHeroImage src={heroImg} alt={clinic.name} />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         </div>
@@ -209,7 +210,7 @@ export default async function ClinicDetailPage({ params }: Props) {
               <Suspense fallback={<div className="h-48 bg-ha-bg-subtle rounded-lg animate-pulse" />}>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {nearby.map((c) => (
-                    <ClinicCard key={c.id} clinic={c} />
+                    <ClinicCard key={c.id} clinic={c} variant="grid" />
                   ))}
                 </div>
               </Suspense>
@@ -217,6 +218,9 @@ export default async function ClinicDetailPage({ params }: Props) {
           )}
         </div>
       </main>
+
+      {/* フローティングキニナル！ボタン */}
+      <FloatingKininarou count={clinic.kininarouCount} />
 
       <Footer />
       <BottomNav />

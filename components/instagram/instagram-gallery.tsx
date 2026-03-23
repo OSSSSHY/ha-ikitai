@@ -50,14 +50,14 @@ export function InstagramGallery({
           <button
             key={post.id}
             onClick={() => setLightboxIndex(i)}
-            className="relative aspect-square overflow-hidden rounded-sm hover:opacity-90 transition-opacity"
+            className="relative aspect-square overflow-hidden rounded-sm group"
           >
             <Image
               src={post.mediaUrl}
               alt={post.caption ?? "Instagram投稿"}
               fill
               sizes="(max-width: 768px) 33vw, 200px"
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </button>
         ))}
